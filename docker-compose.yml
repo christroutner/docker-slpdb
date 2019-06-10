@@ -1,19 +1,21 @@
 mongodb:
-  image: mongo
+  image: mongo:4.0
+  container_name: mongo-slpdb
   ports:
-    - "3503:27017"
+    - "3607:27017"
   volumes:
     - ./data:/data/db
   command: mongod --smallfiles --logpath=/dev/null # -- quiet
   restart: always
 
-bitcore-node:
+slpdb:
   build: .
   dockerfile: Dockerfile
+  container_name: slpdb
   links:
     - mongodb
-  ports:
-    - "3003:3000"
+#  ports:
+#    - "3003:3000"
 #    - "9229:9229"
 #  volumes:
 #    - ./theme:/home/connextcms/theme

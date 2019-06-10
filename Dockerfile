@@ -3,6 +3,8 @@ MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
 RUN apt-get update -y
 
+RUN apt-get install autoconf
+
 #Set the working directory to be the home directory
 WORKDIR /home/safeuser
 
@@ -13,13 +15,12 @@ USER safeuser
 
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/bitpay/bitcore
-WORKDIR /home/safeuser/bitcore
+RUN git clone https://github.com/christroutner/SLPDB
+WORKDIR /home/safeuser/SLPDB
 RUN npm install
-COPY bitcore.config.json bitcore.config.json
+COPY config.ts config.ts
 
-
-EXPOSE 3000
+VOLUME /home/safeuser/SLPDB/_leveldb
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]

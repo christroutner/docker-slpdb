@@ -17,6 +17,6 @@ slpdb:
 #  ports:
 #    - "3003:3000"
 #    - "9229:9229"
-#  volumes:
-#    - ./theme:/home/connextcms/theme
+  volumes:
+    - ./_leveldb:/home/safeuser/SLPDB/_leveldb
   restart: always

@@ -4,7 +4,7 @@ mongodb:
   ports:
     - "3607:27017"
   volumes:
-    - ./data:/data/db
+    - ../mongodb:/data/db
   command: mongod --smallfiles --logpath=/dev/null # -- quiet
   restart: always
 
@@ -18,5 +18,5 @@ slpdb:
 #    - "3003:3000"
 #    - "9229:9229"
   volumes:
-    - ./_leveldb:/home/safeuser/SLPDB/_leveldb
+    - ../leveldb:/home/safeuser/SLPDB/_leveldb
   restart: always

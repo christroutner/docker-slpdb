@@ -25,4 +25,4 @@ VOLUME /home/safeuser/SLPDB/_leveldb
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
-#CMD ["bitcoind", "-conf=/home/bitcoin/.bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]
+

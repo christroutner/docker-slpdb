@@ -19,13 +19,13 @@ export class Config {
 		'user': process.env.rpc_user ? process.env.rpc_user : 'bitcoin',
 		'pass': process.env.rpc_pass ? process.env.rpc_pass : 'password',
 		'host': process.env.rpc_host ? process.env.rpc_host : '172.17.0.1',
-		'port': process.env.rpc_port ? process.env.rpc_port : '8332',
+		'port': process.env.rpc_port ? process.env.rpc_port : '18332',
 		'limit': Number.parseInt(process.env.rpc_limit ? process.env.rpc_limit : "150")
 	}
 	static db: DbConfig = {
 		name: process.env.db_name ? process.env.db_name : 'slpdb',
 		name_testnet: process.env.db_name ? process.env.db_name + "_test" : 'slpdb_testnet',
-		url: process.env.db_url ? process.env.db_url : 'mongodb://172.17.0.1:3607',
+		url: process.env.db_url ? process.env.db_url : 'mongodb://172.17.0.1:3608',
 		confirmed_schema_version: 1,
 		token_schema_version: 70,
 		index: {

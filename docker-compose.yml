@@ -1,8 +1,8 @@
 mongodb:
   image: mongo:4.0
-  container_name: mongo-slpdb
+  container_name: mongo-slpdb-testnet
   ports:
-    - "3607:27017"
+    - "3608:27017"
   volumes:
     - ../mongodb:/data/db
   command: mongod --smallfiles --logpath=/dev/null # -- quiet
@@ -11,7 +11,7 @@ mongodb:
 slpdb:
   build: .
   dockerfile: Dockerfile
-  container_name: slpdb
+  container_name: slpdb-testnet
   links:
     - mongodb
 #  ports:

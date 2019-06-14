@@ -14,12 +14,12 @@ USER safeuser
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
 RUN git clone https://github.com/christroutner/slpserve
-WORKDIR /home/safeuser/SLPDB
+WORKDIR /home/safeuser/slpserve
 RUN npm install
-COPY config.ts config.ts
+COPY env .env
 
-VOLUME /home/safeuser/SLPDB/_leveldb
+CMD ["npm", "start"]
 
-COPY startup-script.sh startup-script.sh
-CMD ["./startup-script.sh"]
+#COPY startup-script.sh startup-script.sh
+#CMD ["./startup-script.sh"]
 #CMD ["bitcoind", "-conf=/home/bitcoin/.bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]

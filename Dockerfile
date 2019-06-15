@@ -21,7 +21,7 @@ WORKDIR /home/safeuser/SLPDB
 RUN npm install
 COPY config.ts config.ts
 
-VOLUME /home/safeuser/SLPDB/_leveldb
+VOLUME /home/safeuser/SLPDB/_leveldb_testnet
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]

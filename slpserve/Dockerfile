@@ -3,6 +3,8 @@ MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
 RUN apt-get update -y
 
+RUN apt-get install -y autoconf libtool
+
 #Set the working directory to be the home directory
 WORKDIR /home/safeuser
 

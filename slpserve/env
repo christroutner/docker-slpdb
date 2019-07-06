@@ -1,5 +1,5 @@
 db_name=slpdb_testnet
-db_url=mongodb://172.17.0.1:3608
+db_url=mongodb://172.17.0.1:13301
 
 slpserve_port=4000
 slpserve_timeout=30000

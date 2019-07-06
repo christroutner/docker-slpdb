@@ -2,7 +2,8 @@ mongodb:
   image: mongo:4.0
   container_name: mongo-slpdb-testnet
   ports:
-    - "3608:27017"
+    #- "3608:27017"
+    - "13301:27017"
   volumes:
     - ../mongodb:/data/db
   command: mongod --smallfiles --logpath=/dev/null # -- quiet
@@ -28,5 +29,5 @@ slpserve:
   links:
     - mongodb
   ports:
-    - "4000:4000"
+    - "13300:4000"
   restart: always

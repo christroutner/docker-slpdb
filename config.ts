@@ -25,7 +25,7 @@ export class Config {
 	static db: DbConfig = {
 		name: process.env.db_name ? process.env.db_name : 'slpdb',
 		name_testnet: process.env.db_name ? process.env.db_name + "_test" : 'slpdb_testnet',
-		url: process.env.db_url ? process.env.db_url : 'mongodb://172.17.0.1:3608',
+		url: process.env.db_url ? process.env.db_url : 'mongodb://172.17.0.1:13301',
 		confirmed_schema_version: 1,
 		token_schema_version: 70,
 		index: {

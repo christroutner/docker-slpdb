@@ -20,3 +20,13 @@ slpdb:
   volumes:
     - ../leveldb:/home/safeuser/SLPDB/_leveldb
   restart: always
+
+slpserve:
+  build: ./slpserve/
+  dockerfile: Dockerfile
+  container_name: slpserve-testnet
+  links:
+    - mongodb
+  ports:
+    - "12300:4000"
+  restart: always

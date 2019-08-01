@@ -18,6 +18,7 @@ USER safeuser
 WORKDIR /home/safeuser
 RUN git clone https://github.com/christroutner/SLPDB
 WORKDIR /home/safeuser/SLPDB
+RUN git checkout unstable
 RUN npm install
 COPY config.ts config.ts
 

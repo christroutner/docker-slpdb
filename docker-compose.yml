@@ -14,6 +14,8 @@ slpdb:
   container_name: slpdb
   links:
     - mongodb
+#  depends_on:
+#    - mongodb
 #  ports:
 #    - "3003:3000"
 #    - "9229:9229"

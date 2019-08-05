@@ -39,7 +39,7 @@ command:
 
 `docker-compose build --no-cache`
 
-6. Bring the container online by running the following command:
+- Bring the container online by running the following command:
 
 `docker-compose up -d`
 

@@ -1,6 +1,6 @@
 mongodb:
   image: mongo:4.0
-  container_name: mongo-slpdb
+  container_name: mongo-slpdb-testnet
   ports:
     - "12301:27017"
   volumes:
@@ -21,7 +21,17 @@ slpdb:
 #    - "3003:3000"
 #    - "9229:9229"
   volumes:
-    - ../leveldb:/home/safeuser/SLPDB/_leveldb
+    - ../leveldb:/home/safeuser/SLPDB/_leveldb_testnet
+  restart: always
+
+slpserve:
+  build: ./slpserve/
+  dockerfile: Dockerfile
+  container_name: slpserve-testnet
+  links:
+    - mongodb
+  ports:
+    - "4000:4000"
   restart: always
 
 slpserve:

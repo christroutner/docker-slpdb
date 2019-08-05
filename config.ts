@@ -19,7 +19,7 @@ export class Config {
 		'user': process.env.rpc_user ? process.env.rpc_user : 'bitcoin',
 		'pass': process.env.rpc_pass ? process.env.rpc_pass : 'password',
 		'host': process.env.rpc_host ? process.env.rpc_host : '172.17.0.1',
-		'port': process.env.rpc_port ? process.env.rpc_port : '8332',
+		'port': process.env.rpc_port ? process.env.rpc_port : '18332',
 		'limit': Number.parseInt(process.env.rpc_limit ? process.env.rpc_limit : "150")
 	}
 	static db: DbConfig = {

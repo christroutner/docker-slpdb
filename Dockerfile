@@ -22,8 +22,8 @@ RUN git checkout unstable
 RUN npm install
 COPY config.ts config.ts
 
-VOLUME /home/safeuser/SLPDB/_leveldb
+VOLUME /home/safeuser/SLPDB/_leveldb_testnet
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
-#CMD ["bitcoind", "-conf=/home/bitcoin/.bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]
+

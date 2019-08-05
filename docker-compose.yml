@@ -9,8 +9,9 @@ mongodb:
   restart: always
 
 slpdb:
-  build: .
-  dockerfile: Dockerfile
+  #build: .
+  #dockerfile: Dockerfile
+  image: christroutner/slpdb-mainnet_slpdb:0.14.1
   container_name: slpdb
   links:
     - mongodb
@@ -24,8 +25,9 @@ slpdb:
   restart: always
 
 slpserve:
-  build: ./slpserve/
-  dockerfile: Dockerfile
+  #build: ./slpserve/
+  #dockerfile: Dockerfile
+  image: christroutner/slpdb-mainnet_slpserve:0.14.1
   container_name: slpserve
   links:
     - mongodb

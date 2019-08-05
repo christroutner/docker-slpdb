@@ -1,12 +1,8 @@
-# docker-bitcore-node
+# docker-slpdb
 This Docker container sets up
-a [Bitcore Node](https://github.com/bitpay/bitcore/tree/master/packages/bitcore-node)
-which is a REST API server that replaces Insight API. While Bitcore Node is
-compatible with multiple cryptocurrencies, this Docker container is configured
-for Bitcoin Cash (BCH).
-
-Details about running this container can be found on my blog:
-http://troutsblog.com/research/bitcore-node-insight-api
+a [SLPDB](https://github.com/christroutner/SLPDB) and
+[slpserve](https://github.com/fountainhead-cash/slpserve)
+to create API endpoints for querying [SLP token](https://simpleledger.cash/) information.
 
 ## Installation
 It's assumed that you are starting with a fresh installation of Ubuntu 18.04
@@ -25,16 +21,21 @@ shows how to do so on a Ubuntu system.
 
 - Ensure you have a fully-synced BCH full node running on the same machine with
 ports 8332 (RPC) and 8333 (p2p) exposed.
-This [docker-abc](https://github.com/christroutner/docker-abc) docerized
+This [docker-abc](https://github.com/christroutner/docker-abc) dockerized
 full node will do exactly this.
 
 - Clone this repository in your home directory with the following command:
-`git clone https://github.com/christroutner/docker-bitcore-node`
+`git clone https://github.com/christroutner/docker-slpdb`
 
-- Customize the [bitcore.config.json](bitcore.config.json) file to reflect
-the setting of your full node.
+- Customize the [config.tx](config.ts) file to reflect
+the setting of your full node. If using
+the [BCH JS Toolkit](https://bchjs.cash) no changes are necessary.
 
-- Build the docker container.
+- (optional) By default,
+the [docker-compose.yml](docker-compose.yml) file is configured to pull the image
+from Docker Hub. But the container can also be built from scratch with this
+command:
+
 `docker-compose build --no-cache`
 
 6. Bring the container online by running the following command:

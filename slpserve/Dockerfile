@@ -4,7 +4,6 @@ MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 RUN apt-get update -y
 
 RUN apt-get install -y autoconf libtool
-RUN npm install -g typescript
 
 #Set the working directory to be the home directory
 WORKDIR /home/safeuser
@@ -16,14 +15,13 @@ USER safeuser
 
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/christroutner/SLPDB
-WORKDIR /home/safeuser/SLPDB
-RUN git checkout unstable
+RUN git clone https://github.com/christroutner/slpserve
+WORKDIR /home/safeuser/slpserve
 RUN npm install
-COPY config.ts config.ts
+COPY env .env
 
-VOLUME /home/safeuser/SLPDB/_leveldb_testnet
+CMD ["npm", "start"]
 
-COPY startup-script.sh startup-script.sh
-CMD ["./startup-script.sh"]
-
+#COPY startup-script.sh startup-script.sh
+#CMD ["./startup-script.sh"]
+#CMD ["bitcoind", "-conf=/home/bitcoin/.bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]

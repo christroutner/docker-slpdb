@@ -1,6 +1,6 @@
 # docker-slpdb
 This Docker container sets up
-a [SLPDB](https://github.com/christroutner/SLPDB) and
+[SLPDB](https://github.com/christroutner/SLPDB) and
 [slpserve](https://github.com/fountainhead-cash/slpserve)
 to create API endpoints for querying [SLP token](https://simpleledger.cash/) information.
 
@@ -25,9 +25,10 @@ This [docker-abc](https://github.com/christroutner/docker-abc) dockerized
 full node will do exactly this.
 
 - Clone this repository in your home directory with the following command:
+
 `git clone https://github.com/christroutner/docker-slpdb`
 
-- Customize the [config.tx](config.ts) file to reflect
+- Customize the [config.ts](config.ts) file to reflect
 the setting of your full node. If using
 the [BCH JS Toolkit](https://bchjs.cash) no changes are necessary.
 
@@ -39,6 +40,7 @@ command:
 `docker-compose build --no-cache`
 
 6. Bring the container online by running the following command:
+
 `docker-compose up -d`
 
 ## Usage

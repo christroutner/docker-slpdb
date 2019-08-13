@@ -1,6 +1,6 @@
 mongodb:
   image: mongo:4.0
-  container_name: mongo-slpdb-testnet
+  container_name: mongo-slpdb
   ports:
     - "12301:27017"
   volumes:

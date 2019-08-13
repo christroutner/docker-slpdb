@@ -25,16 +25,6 @@ slpdb:
   restart: always
 
 slpserve:
-  build: ./slpserve/
-  dockerfile: Dockerfile
-  container_name: slpserve-testnet
-  links:
-    - mongodb
-  ports:
-    - "4000:4000"
-  restart: always
-
-slpserve:
   #build: ./slpserve/
   #dockerfile: Dockerfile
   image: christroutner/slpdb-mainnet_slpserve:0.14.1

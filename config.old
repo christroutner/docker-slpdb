@@ -1,7 +1,7 @@
-export interface DbConfig {
-	name: string;
+export interface DbConfig { 
+	name: string; 
 	name_testnet: string;
-	url: string;
+	url: string; 
 	index: { [key: string]: { [key: string]: string[] } };
 	token_schema_version: number;
 	confirmed_schema_version: number;
@@ -9,8 +9,8 @@ export interface DbConfig {
 
 export type CollectionType = { keys: string[], fulltext: string[] }
 
-export interface RpcConfig {
-	protocol: string; user: string; pass: string; host: string; port: string; limit: number;
+export interface RpcConfig { 
+	protocol: string; user: string; pass: string; host: string; port: string; limit: number; 
 }
 
 export class Config {
@@ -19,15 +19,15 @@ export class Config {
 		'user': process.env.rpc_user ? process.env.rpc_user : 'bitcoin',
 		'pass': process.env.rpc_pass ? process.env.rpc_pass : 'password',
 		'host': process.env.rpc_host ? process.env.rpc_host : '172.17.0.1',
-		'port': process.env.rpc_port ? process.env.rpc_port : '8332',
+		'port': process.env.rpc_port ? process.env.rpc_port : '18332',
 		'limit': Number.parseInt(process.env.rpc_limit ? process.env.rpc_limit : "150")
 	}
 	static db: DbConfig = {
 		name: process.env.db_name ? process.env.db_name : 'slpdb',
 		name_testnet: process.env.db_name ? process.env.db_name + "_test" : 'slpdb_testnet',
 		url: process.env.db_url ? process.env.db_url : 'mongodb://172.17.0.1:12301',
-		confirmed_schema_version: 2,
-		token_schema_version: 73,
+		confirmed_schema_version: 1, 
+		token_schema_version: 71,
 		index: {
 			tokens: {
 				keys: [ 'tokenDetails.tokenIdHex', 'tokenDetails.name', 'tokenDetails.symbol', 'tokenStats.qty_token_circulating_supply', 'tokenStats.qty_token_burned', 'tokenStats.qty_token_minted' ],
@@ -81,7 +81,7 @@ export class Config {
 	}
 	static core = {
 		from: Number.parseInt(process.env.core_from ? process.env.core_from : "543375"),
-		from_testnet: Number.parseInt(process.env.core_from_testnet ? process.env.core_from_testnet : "1253801"),
+		from_testnet: Number.parseInt(process.env.core_from ? process.env.core_from : "1253801"),
 		slp_mempool_ignore_length: Number.parseInt(process.env.core_slp_mempool_ignore_length ? process.env.core_slp_mempool_ignore_length : "1000000"),
 	}
 }

@@ -21,13 +21,13 @@ slpdb:
 #    - "3003:3000"
 #    - "9229:9229"
   volumes:
-    - ../data/leveldb:/home/safeuser/SLPDB/_leveldb_testnet
+    - ../data/leveldb:/home/safeuser/SLPDB/_leveldb
   restart: always
 
 slpserve:
   #build: ./slpserve/
   #dockerfile: Dockerfile
-  image: christroutner/slpdb-mainnet_slpserve:latest
+  image: christroutner/slpdb-mainnet_slpserve
   container_name: slpserve
   links:
     - mongodb

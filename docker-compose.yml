@@ -5,7 +5,7 @@ mongodb:
     #- "3608:27017"
     - "13301:27017"
   volumes:
-    - ../mongodb:/data/db
+    - ../data/mongodb:/data/db
   command: mongod --smallfiles --logpath=/dev/null # -- quiet
   restart: always
 
@@ -19,12 +19,13 @@ slpdb:
 #    - "3003:3000"
 #    - "9229:9229"
   volumes:
-    - ../leveldb:/home/safeuser/SLPDB/_leveldb_testnet
+    - ../data/leveldb:/home/safeuser/SLPDB/_leveldb_testnet
   restart: always
 
 slpserve:
-  build: ./slpserve/
-  dockerfile: Dockerfile
+  #build: ./slpserve/
+  #dockerfile: Dockerfile
+  image: christroutner/slpdb-testnet_slpserve:latest
   container_name: slpserve-testnet
   links:
     - mongodb

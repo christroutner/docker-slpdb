@@ -10,8 +10,9 @@ mongodb:
   restart: always
 
 slpdb:
-  build: .
-  dockerfile: Dockerfile
+  #build: .
+  #dockerfile: Dockerfile
+  image: christroutner/slpdb-testnet_slpdb:0.15.3
   container_name: slpdb-testnet
   links:
     - mongodb

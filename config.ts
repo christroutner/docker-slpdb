@@ -1,7 +1,7 @@
-export interface DbConfig {
-	name: string;
+export interface DbConfig { 
+	name: string; 
 	name_testnet: string;
-	url: string;
+	url: string; 
 	index: { [key: string]: { [key: string]: string[] } };
 	token_schema_version: number;
 	confirmed_schema_version: number;
@@ -9,8 +9,8 @@ export interface DbConfig {
 
 export type CollectionType = { keys: string[], fulltext: string[] }
 
-export interface RpcConfig {
-	protocol: string; user: string; pass: string; host: string; port: string; limit: number;
+export interface RpcConfig { 
+	protocol: string; user: string; pass: string; host: string; port: string; limit: number; 
 }
 
 export class Config {
@@ -18,9 +18,13 @@ export class Config {
 		'protocol': process.env.rpc_protocol ? process.env.rpc_protocol : 'http',
 		'user': process.env.rpc_user ? process.env.rpc_user : 'bitcoin',
 		'pass': process.env.rpc_pass ? process.env.rpc_pass : 'password',
-		'host': process.env.rpc_host ? process.env.rpc_host : '172.17.0.1',
+		'host': process.env.rpc_host ? process.env.rpc_host : '192.168.0.36',
 		'port': process.env.rpc_port ? process.env.rpc_port : '8332',
 		'limit': Number.parseInt(process.env.rpc_limit ? process.env.rpc_limit : "150")
+	}
+	static grpc = {
+		url: Boolean(process.env.grpc_url) ? process.env.grpc_url : undefined, 
+		certPath: Boolean(process.env.grpc_certPath) ? process.env.grpc_certPath : undefined
 	}
 	static db: DbConfig = {
 		name: process.env.db_name ? process.env.db_name : 'slpdb',

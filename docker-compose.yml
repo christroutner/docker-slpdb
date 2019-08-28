@@ -9,19 +9,15 @@ mongodb:
   restart: always
 
 slpdb:
-  #build: .
-  #dockerfile: Dockerfile
-  image: christroutner/slpdb-mainnet_slpdb:0.15.3
+  build: .
+  dockerfile: Dockerfile
+  #image: christroutner/slpdb-mainnet_slpdb:0.15.3
   container_name: slpdb
   links:
     - mongodb
-#  depends_on:
-#    - mongodb
-#  ports:
-#    - "3003:3000"
-#    - "9229:9229"
   volumes:
     - ../data/leveldb:/home/safeuser/SLPDB/_leveldb
+    - ../config:/home/safeuser/config
   restart: always
 
 slpserve:

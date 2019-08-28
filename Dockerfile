@@ -18,11 +18,13 @@ USER safeuser
 WORKDIR /home/safeuser
 RUN git clone https://github.com/christroutner/SLPDB
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout unstable
+#RUN git checkout unstable
 RUN npm install
-COPY config.ts config.ts
+#COPY config.ts config.ts
 
-VOLUME /home/safeuser/SLPDB/_leveldb_testnet
+# Call out the persistant volumes
+VOLUME /home/safeuser/SLPDB/_leveldb
+VOLUME /home/safeuser/config
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]

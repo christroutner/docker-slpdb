@@ -1,5 +1,6 @@
 mongodb:
-  image: mongo:4.2-bionic
+  #image: mongo:4.2-bionic
+  image: mongo:4.0
   container_name: mongo-slpdb
   ports:
     - "12301:27017"

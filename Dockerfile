@@ -62,3 +62,7 @@ VOLUME /home/safeuser/config
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
+
+# Used for debugging
+#WORKDIR /home/safeuser
+#CMD ["node", "dummyapp.js"]

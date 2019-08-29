@@ -5,7 +5,7 @@ mongodb:
     - "12301:27017"
   volumes:
     - ../data/mongodb:/data/db
-  command: mongod --smallfiles --logpath=/dev/null # -- quiet
+  command: mongod --logpath=/dev/null # -- quiet
   restart: always
 
 slpdb:

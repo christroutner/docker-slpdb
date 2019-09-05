@@ -14,4 +14,6 @@ export db_url=mongodb://172.17.0.1:13301
 export rpc_host=172.17.0.1
 export rpc_port=18332
 
+export zmq_incoming_port=38332
+
 npm start

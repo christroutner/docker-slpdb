@@ -13,7 +13,7 @@ export db_url=mongodb://172.17.0.1:13301
 # Set the full node IP address and port
 export rpc_host=172.17.0.1
 export rpc_port=18332
-
+export zmq_incoming_host=172.17.0.1
 export zmq_incoming_port=38332
 
 npm start

@@ -32,7 +32,7 @@ full node will do exactly this.
   - `data` - will contain LevelDB and MongoDB database data.
 
 - Customize the [run-script.sh](./run-script.sh) bash script file with the
-environment variables for your full node.
+environment variables for your full node. Copy this file to the `config` directory you created earlier.
 
 - (optional) By default,
 the [docker-compose.yml](docker-compose.yml) file is configured to pull the image

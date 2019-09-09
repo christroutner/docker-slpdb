@@ -50,7 +50,8 @@ USER safeuser
 
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/christroutner/SLPDB
+#RUN git clone https://github.com/christroutner/SLPDB
+RUN git clone https://github.com/simpleledger/SLPDB
 WORKDIR /home/safeuser/SLPDB
 #RUN git checkout unstable
 RUN npm install

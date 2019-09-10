@@ -29,5 +29,5 @@ slpserve:
   links:
     - mongodb
   ports:
-    - "12300:4000"
+    - "15300:4000"
   restart: always

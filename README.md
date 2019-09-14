@@ -30,6 +30,7 @@ full node will do exactly this.
 - Create two additional directories in the same folder as the `docker-slpdb` folder:
   - `config` - will contain persistent configuration data to customize SLPDB.
   - `data` - will contain LevelDB and MongoDB database data.
+    - Inside this directory, create two more directories: `leveldb` and `mongodb`
 
 - Customize the [run-script.sh](./run-script.sh) bash script file with the
 environment variables for your full node. Copy this file to the `config` directory you created earlier.

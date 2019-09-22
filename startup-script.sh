@@ -1,5 +1,8 @@
 #!/bin/bash
-#export DB_HOST=172.17.0.1
-#export DB_PORT=3503
-cp ~/config/config.ts ~/SLPDB/config.ts
-npm start
+
+# This startup script becomes part of the Docker image. It is used
+# to grab the run-script from the persistant volume and run it.
+# Edit the run-script.sh if you need to change the way SLPDB runs,
+# including environment variables.
+cp ~/config/run-script.sh ~/SLPDB/run-script.sh
+./run-script.sh

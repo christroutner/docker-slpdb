@@ -23,6 +23,6 @@ export zmq_incoming_port=28332
 export enable_graph_search=0
 
 # Turn off ZMQ output port
-export zmq_outgoing_enable=false
+export zmq_outgoing_enable=0
 
 npm start

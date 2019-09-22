@@ -48,15 +48,17 @@ USER safeuser
 # Prep 'sudo' commands.
 #RUN echo 'abcd8765' | sudo -S pwd
 
-# Clone the Bitcore repository
+# Clone the SLPDB repository
 WORKDIR /home/safeuser
 #RUN git clone https://github.com/christroutner/SLPDB
 RUN git clone https://github.com/simpleledger/SLPDB
+
+# Checkout the last QA'd version.
 WORKDIR /home/safeuser/SLPDB
 RUN git checkout f6bdfd3da284435af4757dc34e2bcd771fbd23a5
-#RUN git checkout unstable
+
+# Install dependencies.
 RUN npm install
-#COPY config.ts config.ts
 
 # Call out the persistant volumes
 VOLUME /home/safeuser/SLPDB/_leveldb

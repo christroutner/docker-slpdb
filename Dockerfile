@@ -16,8 +16,10 @@ USER safeuser
 
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/christroutner/SLPDB
+#RUN git clone https://github.com/christroutner/SLPDB
+RUN git clone https://github.com/simpleledger/SLPDB
 WORKDIR /home/safeuser/SLPDB
+RUN git checkout f6bdfd3da284435af4757dc34e2bcd771fbd23a5
 #RUN git checkout unstable
 RUN npm install
 #COPY config.ts config.ts
@@ -28,4 +30,3 @@ VOLUME /home/safeuser/config
 
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
-

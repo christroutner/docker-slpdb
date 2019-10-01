@@ -53,7 +53,7 @@ USER safeuser
 WORKDIR /home/safeuser
 RUN git clone https://github.com/christroutner/SLPDB
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout unstable
+RUN git checkout c4d28148ab014d23ef0f51145ebf9da4c3179033
 RUN npm install
 
 VOLUME /home/safeuser/SLPDB/_leveldb_testnet

@@ -14,7 +14,7 @@ RUN apt-get update -y
 RUN apt-get install -y sudo git curl nano gnupg wget
 
 #Install Node and NPM
-RUN curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs build-essential
 
@@ -53,7 +53,7 @@ USER safeuser
 WORKDIR /home/safeuser
 RUN git clone https://github.com/christroutner/SLPDB
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout c4d28148ab014d23ef0f51145ebf9da4c3179033
+RUN git checkout 2524e0f4f9b9eb1b97feee64f8b3f24a936f7e19
 RUN npm install
 
 VOLUME /home/safeuser/SLPDB/_leveldb_testnet

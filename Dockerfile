@@ -12,7 +12,7 @@ RUN apt-get update -y
 RUN apt-get install -y sudo git curl nano gnupg wget
 
 #Install Node and NPM
-RUN curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs build-essential
 
@@ -55,7 +55,7 @@ RUN git clone https://github.com/simpleledger/SLPDB
 
 # Checkout the last QA'd version.
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout f6bdfd3da284435af4757dc34e2bcd771fbd23a5
+RUN git checkout 2524e0f4f9b9eb1b97feee64f8b3f24a936f7e19
 
 # Install dependencies.
 RUN npm install

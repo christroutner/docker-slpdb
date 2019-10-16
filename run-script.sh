@@ -26,6 +26,7 @@ export enable_graph_search=0
 export zmq_outgoing_enable=0
 
 # Set the telemtry name for this node
-export telemetry_advertised_host=QA-Bitcoin.com
+export telemetry_advertised_host=trout-docker-unedited
 
 npm start
+#tsc && node --max_old_space_size=8192 index run --startHeight 604260

@@ -10,9 +10,9 @@ mongodb:
   restart: always
 
 slpdb:
-  #build: .
-  #dockerfile: Dockerfile
-  image: christroutner/slpdb-mainnet_slpdb:0.15.5
+  build: .
+  dockerfile: Dockerfile
+  #image: christroutner/slpdb-mainnet_slpdb:0.15.5
   container_name: slpdb
   links:
     - mongodb

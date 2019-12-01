@@ -55,10 +55,14 @@ RUN git clone https://github.com/simpleledger/SLPDB
 
 # Checkout the last QA'd version.
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout 2a5ca70acdabe9b984916ed95c55633200c04c5d
+RUN git checkout 42dc8b7cad3845629095ca72ae210af05e04227d
 
 # Install dependencies.
 RUN npm install
+
+# Install patch
+#COPY patch1.patch patch1.patch
+#RUN git apply patch1.patch
 
 # Call out the persistant volumes
 VOLUME /home/safeuser/SLPDB/_leveldb

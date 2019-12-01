@@ -55,7 +55,7 @@ RUN git clone https://github.com/simpleledger/SLPDB
 
 # Checkout the last QA'd version.
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout 9665659f389c8eca51c3d69c8af9d5c86488585c
+RUN git checkout 42dc8b7cad3845629095ca72ae210af05e04227d
 
 # Install dependencies.
 RUN npm install

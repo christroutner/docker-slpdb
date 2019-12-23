@@ -15,12 +15,18 @@ USER safeuser
 
 # Clone the Bitcore repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/christroutner/slpserve
+#RUN git clone https://github.com/christroutner/slpserve
+#RUN git clone https://github.com/simpleledger/slpserve
+#RUN git clone https://github.com/fountainhead-cash/slpserve
+RUN git clone https://github.com/blockparty-sh/slpserve
 WORKDIR /home/safeuser/slpserve
 RUN npm install
 COPY env .env
 
 CMD ["npm", "start"]
+
+#COPY dummyapp.js dummyapp.js
+#CMD ["node", "dummyapp.js"]
 
 #COPY startup-script.sh startup-script.sh
 #CMD ["./startup-script.sh"]

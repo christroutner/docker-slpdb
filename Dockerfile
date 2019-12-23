@@ -53,7 +53,7 @@ USER safeuser
 WORKDIR /home/safeuser
 RUN git clone https://github.com/simpleledger/SLPDB
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout 42dc8b7cad3845629095ca72ae210af05e04227d
+RUN git checkout 4a0911ce2a54920e7ea3d412191ace93b36735d4
 RUN npm install
 
 VOLUME /home/safeuser/SLPDB/_leveldb_testnet

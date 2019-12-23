@@ -1,18 +1,19 @@
 mongodb:
-  image: mongo:4.0
+  image: mongo:4.2
   container_name: mongo-slpdb-testnet
   ports:
     #- "3608:27017"
     - "13301:27017"
   volumes:
     - ../data/mongodb:/data/db
-  command: mongod --smallfiles --logpath=/dev/null # -- quiet
+  command: mongod --logpath=/dev/null # -- quiet
   restart: always
 
 slpdb:
-  build: .
-  dockerfile: Dockerfile
+  #build: .
+  #dockerfile: Dockerfile
   #image: christroutner/slpdb-testnet_slpdb:0.15.3
+  image: slpdb-testnet_slpdb
   container_name: slpdb-testnet
   links:
     - mongodb
@@ -25,9 +26,9 @@ slpdb:
   restart: always
 
 slpserve:
-  #build: ./slpserve/
-  #dockerfile: Dockerfile
-  image: christroutner/slpdb-testnet_slpserve:latest
+  build: ./slpserve/
+  dockerfile: Dockerfile
+  #image: christroutner/slpdb-testnet_slpserve:latest
   container_name: slpserve-testnet
   links:
     - mongodb

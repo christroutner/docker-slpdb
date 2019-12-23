@@ -1,4 +1,4 @@
-db_name=slpdb_testnet
+db_name=slpdb_test
 db_url=mongodb://172.17.0.1:13301
 
 slpserve_port=4000

@@ -4,3 +4,4 @@ db_url=mongodb://172.17.0.1:13301
 slpserve_port=4000
 slpserve_timeout=30000
 slpserve_log=true
+PRO_PASS=owmvgnsksoapwhrnvu

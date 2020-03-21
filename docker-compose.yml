@@ -3,7 +3,7 @@ mongodb:
   container_name: mongo-slpdb-testnet
   ports:
     #- "3608:27017"
-    - "13301:27017"
+    - "172.17.0.1:13301:27017"
   volumes:
     - ../data/mongodb:/data/db
   command: mongod --logpath=/dev/null # -- quiet

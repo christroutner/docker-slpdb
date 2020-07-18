@@ -20,7 +20,7 @@ RUN git clone https://github.com/christroutner/slpserve
 #RUN git clone https://github.com/fountainhead-cash/slpserve
 #RUN git clone https://github.com/blockparty-sh/slpserve
 WORKDIR /home/safeuser/slpserve
-RUN git checkout basic-auth
+#RUN git checkout basic-auth
 RUN npm install
 COPY env .env
 

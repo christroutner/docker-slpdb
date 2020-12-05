@@ -20,7 +20,7 @@ slpdb:
   volumes:
     - ../data/leveldb:/home/safeuser/SLPDB/_leveldb
     - ../config:/home/safeuser/config
-#  restart: always
+  restart: always
 
 slpserve:
   build: ./slpserve/

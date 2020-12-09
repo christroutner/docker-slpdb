@@ -14,3 +14,9 @@ tokens:
   - name: PSFTEST
     type: include-single
     info: d0ef4de95b78222bfee2326ab11382f4439aa0855936e2fe6ac129a8d778baa0
+  - name: RNEW
+    type: include-single
+    info: 57b76544521b5ee8e2e918cda81a5faf276d38acf96fe20475e1359077850d8b
+  - name: ZAPT
+    type: include-single
+    info: ff1b54b2141f81e07e0027d369db6484dea8d94429a635c35d17a7462a659239

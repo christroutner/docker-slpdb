@@ -1,0 +1,34 @@
+mongodb:
+  image: mongo:4.4.2-bionic
+  #image: mongo:4.2-bionic
+  #image: mongo:4.0
+  container_name: mongo-slpdb
+  ports:
+    - "12301:27017"
+  volumes:
+    - ../data/mongodb:/data/db
+  command: mongod --logpath=/dev/null # -- quiet
+  restart: always
+
+slpdb:
+  build: .
+  dockerfile: Dockerfile
+  #image: christroutner/slpdb-mainnet_slpdb:0.15.5
+  container_name: slpdb
+  links:
+    - mongodb
+  volumes:
+    - ../data/leveldb:/home/safeuser/SLPDB/_leveldb
+    - ../config:/home/safeuser/config
+  restart: always
+
+slpserve:
+  build: ./slpserve/
+  dockerfile: Dockerfile
+  #image: christroutner/slpdb-mainnet_slpserve:0.15.5
+  container_name: slpserve
+  links:
+    - mongodb
+  ports:
+    - "12300:4000"
+  restart: always

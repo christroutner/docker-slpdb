@@ -55,7 +55,7 @@ RUN git clone https://github.com/simpleledger/SLPDB
 
 # Checkout the last QA'd version.
 WORKDIR /home/safeuser/SLPDB
-RUN git checkout bb4a805610b9e4d67c1595b716df36190c75e8b1
+RUN git checkout f1f48a3b7a852e24fd26b3baf6df65b47de6d89e
 COPY filters.yml filters.yml
 
 # Install dependencies.

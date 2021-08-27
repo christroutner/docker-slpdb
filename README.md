@@ -1,3 +1,6 @@
+**Deprecated**: This repository has moved to the PSF repo:
+- https://github.com/Permissionless-Software-Foundation/docker-slpdb
+
 # docker-slpdb
 This Docker container sets up
 [SLPDB](https://github.com/christroutner/SLPDB) and
